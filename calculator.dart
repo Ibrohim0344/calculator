@@ -34,12 +34,12 @@ String? result(String output) {
 void calculate(num num1, num num2, String symbol) {
   switch (symbol) {
     case "-":
-      stdout.write("Natija: ${num1 - num2} 😉");
+      stdout.writeln("\nNatija: ${num1 - num2} 😉");
     case "+":
-      stdout.write("Natija: ${num1 + num2} 😉");
+      stdout.writeln("\nNatija: ${num1 + num2} 😉");
     case "*":
-      stdout.write("Natija: ${num1 * num2} 😉");
+      stdout.writeln("\nNatija: ${num1 * num2} 😉");
     case "/":
-      stdout.write("Natija: ${num1 / num2} 😉");
+      stdout.writeln("\nNatija: ${num1 / num2} 😉");
   }
 }
