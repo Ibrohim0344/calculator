@@ -27,7 +27,7 @@ String? result(String output) {
     return amal;
   }
   stdout.writeln("\nXato amal kiritildi qayta urining!");
-  sleep(Duration(seconds: 2));
+  sleep(Duration(seconds: 1));
   return result(output);
 }
 
