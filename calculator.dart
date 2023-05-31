@@ -1,27 +1,45 @@
 import 'dart:io';
 
 void main(List<String> args) {
-  print("It is our calculator");
+  print("\nSamandar & Ibrohim's calculator\n");
+
+  num first = isNumber("\nBirinchi son: ")!;
+  num second = isNumber("\nIkkinchi son: ")!;
+  String symbol = result("\nAmalni kiriting: ")!;
+  calculate(first, second, symbol);
 }
 
-int? isNumber(String output) {
+num? isNumber(String output) {
   stdout.write(output);
   int? number = int.tryParse(stdin.readLineSync() ?? "");
   if (number is num) {
     return number;
   }
-  stdout.write('Xato kiritildi qayta urining: \n');
+  stdout.writeln("\nXato kiritildi qayta urining: \n");
   return isNumber(output);
 }
 
-String result(num num1, num num2, String output) {
+String? result(String output) {
   stdout.write(output);
   String amal = stdin.readLineSync()!;
 
   if (amal == "+" || amal == "-" || amal == "*" || amal == "/") {
     return amal;
   }
-  stdout.writeln("Xato amal kiritildi qayta urining!");
+  stdout.writeln("\nXato amal kiritildi qayta urining!");
   sleep(Duration(seconds: 2));
-  return result(num1, num2, output);
+  return result(output);
+}
+
+void calculate(num num1, num num2, String symbol) {
+  switch (symbol) {
+    case "-":
+      stdout.write("Natija: ${num1 - num2} 😉");
+    case "+":
+      stdout.write("Natija: ${num1 + num2} 😉");
+    case "*":
+      stdout.write("Natija: ${num1 * num2} 😉");
+    case "/":
+      stdout.write("Natija: ${num1 / num2} 😉");
+  }
 }
