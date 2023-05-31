@@ -6,7 +6,7 @@ void main(List<String> args) {
 
 int? isNumber(String output) {
   stdout.write(output);
-  int? number = int.tryParse(stdin.readLineSync() ?? '');
+  int? number = int.tryParse(stdin.readLineSync() ?? "");
   if (number is num) {
     return number;
   }
@@ -14,6 +14,14 @@ int? isNumber(String output) {
   return isNumber(output);
 }
 
-void calculate() {
-  
+String result(num num1, num num2, String output) {
+  stdout.write(output);
+  String amal = stdin.readLineSync()!;
+
+  if (amal == "+" || amal == "-" || amal == "*" || amal == "/") {
+    return amal;
+  }
+  stdout.writeln("Xato amal kiritildi qayta urining!");
+  sleep(Duration(seconds: 2));
+  return result(num1, num2, output);
 }
